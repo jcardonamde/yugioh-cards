@@ -1,0 +1,45 @@
+<div class="detail-card" *ngIf="card$ | async as card">
+  <!-- El Async me permite hacer un suscribe a dicho card y la respuesta la guardo en as card -->
+  <div class="top">
+    <img
+      [src]="card.card_images[0].image_url"
+      alt="Imagen carta YuGiOh"
+    />
+  </div>
+  <div class="bottom">
+    <h2>{{card.name}}</h2><p style="font-weight: bold;">Level: {{card.level}}</p>
+    <div class="item">
+      <p class="description">{{card.desc}}</p>
+    </div>
+    <div class="item">
+      <h3 class="title">Tipo</h3>
+      <p class="description">{{card.type}}</p>
+    </div>
+    <div class="item">
+      <h3 class="title">SubTipo</h3>
+      <p class="description">{{card.frameType}}</p>
+    </div>
+    <div class="item">
+      <h3 class="title">Raza</h3>
+      <p class="description">{{card.race}}</p>
+    </div>
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Market</th>
+          <th scope="col">Price</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!-- Esta lo convierte en un objeto iterable mediante la llave -->
+        <tr *ngFor="let market of card.card_prices[0] | keyvalue" >
+          <th scope="row">{{market.key | marketName}}</th>
+          <td>{{market.value}}</td>
+        </tr>
+      </tbody>
+    </table>
+    <div>
+      <button routerLink="/" class="back-button">Back Home</button>
+    </div>
+  </div>
+</div>

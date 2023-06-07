@@ -1,0 +1,12 @@
+.list {
+  margin: auto;
+  margin-top: 2em;
+  width: 80%;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(12em, 1fr)); // Layout responsive
+  gap: 0.5em;
+  margin-top: 2em;
+}

@@ -1,0 +1,13 @@
+:host {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.content {
+  background-color: #1D90CE;
+  flex: 1;
+  margin: 0;
+  position: relative;
+}
+
